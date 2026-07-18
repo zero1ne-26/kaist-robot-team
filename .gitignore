@@ -1,0 +1,27 @@
+# 1. 가상 환경 및 파이썬 찌꺼기 
+.venv-1/
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# 2. 미디어 파일 (오디오, 비디오)
+*.mp3
+*.m4a
+*.wav
+*.mp4
+
+# 3. 데이터베이스 및 데이터셋 파일
+*.sqlite3
+*.db
+*.jsonl
+knowledge_base/
+
+# 4. 임시 생성 파일 및 로그
+.tts_concat.txt
+*.log
+
+# 5. 시스템 및 에디터 설정 파일
+.vscode/
+.DS_Store
+eval_pipeline/
