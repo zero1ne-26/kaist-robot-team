@@ -25,3 +25,10 @@ knowledge_base/
 .vscode/
 .DS_Store
 eval_pipeline/
+*.jpg
+*.jpeg
+*.png
+*.mp3
+*.m4a
+*.wav
+*.mp4
