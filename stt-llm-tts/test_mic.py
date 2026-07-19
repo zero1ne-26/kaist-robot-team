@@ -1,6 +1,6 @@
 import argparse
 
-from audio_manager import AudioManager
+from utils.audio_manager import AudioManager
 
 # Adjust these values as needed.
 LISTEN_TIMEOUT_SECONDS = 10.0

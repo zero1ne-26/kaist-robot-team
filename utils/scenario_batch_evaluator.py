@@ -3,17 +3,19 @@ from __future__ import annotations
 import argparse
 import csv
 import re
+import sys
 import time
 from pathlib import Path
 from statistics import mean
 from typing import Any
 
-from interactive_scenario import (
-    EXAONE_HRI_SYSTEM_PROMPT,
-    INITIAL_SAD_QUESTION,
-    call_exaone_contextual_response,
-)
-from loop4 import sanitize_tts_text, warm_up_models
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from utils.interactive_scenario import INITIAL_SAD_QUESTION
+from utils.loop4 import sanitize_tts_text, warm_up_models
+from utils.hri_response import EXAONE_HRI_SYSTEM_PROMPT, call_exaone_contextual_response
 
 
 DEFAULT_OUTPUT_DIR = Path("eval_pipeline/scenario_batch")

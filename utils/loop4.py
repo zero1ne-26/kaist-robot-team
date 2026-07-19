@@ -4,6 +4,7 @@ import argparse
 import base64
 import os
 import re
+import sys
 import time
 from pathlib import Path
 from typing import Any
@@ -11,7 +12,11 @@ from typing import Any
 import cv2
 import requests
 
-from audio_manager import AudioManager
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from utils.audio_manager import AudioManager
 
 
 OLLAMA_HOST = "http://localhost:11434"

@@ -4,7 +4,7 @@ import unittest
 from types import SimpleNamespace
 from unittest.mock import patch
 
-import audio_manager
+from utils import audio_manager
 import requests
 
 

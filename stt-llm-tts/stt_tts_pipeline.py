@@ -14,9 +14,9 @@ from typing import Any, AsyncIterator, Optional
 
 import requests
 
-from agents import RAGAgent, TOOL_CALL_SYSTEM_PROMPT, ToolAgent, ToolCall, extract_tool_call_from_text
-from audio_manager import AudioManager
-from main import run_pipeline
+from pipeline_core import run_pipeline
+from utils.agents import RAGAgent, TOOL_CALL_SYSTEM_PROMPT, ToolAgent, ToolCall, extract_tool_call_from_text
+from utils.audio_manager import AudioManager
 
 
 DEFAULT_MIC_TIMEOUT = 10.0

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import re
+import sys
 import time
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -12,7 +13,11 @@ from typing import Any
 import cv2
 import numpy as np
 
-from loop4 import EMOTION_RULES, run_interaction_pipeline, sanitize_tts_text, warm_up_models
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from utils.loop4 import EMOTION_RULES, run_interaction_pipeline, sanitize_tts_text, warm_up_models
 
 
 EMOTIONS = ("happy", "sad", "angry", "surprised", "neutral")

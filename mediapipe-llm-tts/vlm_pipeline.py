@@ -8,7 +8,7 @@ from typing import Any
 import cv2
 import requests
 
-from loop4 import ensure_emotion_response_quality
+from utils.loop4 import ensure_emotion_response_quality
 
 
 OLLAMA_HOST = "http://localhost:11434"

@@ -10,13 +10,11 @@ import cv2
 import mediapipe as mp
 import numpy as np
 
-from interactive_scenario import (
-    EXAONE_HRI_SYSTEM_PROMPT,
-    call_exaone_contextual_response,
-    speak_tts,
-)
-from loop4 import warm_up_models
-from mediapipe_emotion import EmotionEngine, create_face_landmarker, draw_ai_view, emotion_scores_from_result
+from utils.loop4 import warm_up_models
+from utils.hri_response import EXAONE_HRI_SYSTEM_PROMPT, call_exaone_contextual_response
+from utils.mediapipe_bridge import EmotionEngine, create_face_landmarker, draw_ai_view, emotion_scores_from_result
+from utils.stt import listen_from_terminal
+from utils.tts import speak_tts
 
 
 TRIGGER_EMOTIONS = {"sad", "angry", "fear"}
@@ -39,8 +37,7 @@ class RobotState(enum.Enum):
 
 
 def listen_stt() -> str:
-    user_text = input("[STT 입력 시뮬레이션] 사용자 말: ").strip()
-    return user_text or "오늘 좀 힘들어요"
+    return listen_from_terminal(default_text="오늘 좀 힘들어요")
 
 
 def _draw_landmarks(frame, face_landmarks, width: int, height: int) -> None:

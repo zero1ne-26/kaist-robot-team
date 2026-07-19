@@ -2,8 +2,8 @@ import argparse
 import signal
 from pathlib import Path
 
-from audio_manager import AudioManager
-from states import ConversationStateMachine
+from utils.audio_manager import AudioManager
+from utils.states import ConversationStateMachine
 
 DEFAULT_MIC_TIMEOUT = 10.0
 DEFAULT_MIC_PHRASE_TIME_LIMIT = 10.0

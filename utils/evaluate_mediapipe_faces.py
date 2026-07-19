@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import sys
 import time
 from pathlib import Path
 from statistics import mean
@@ -11,8 +12,13 @@ import cv2
 import mediapipe as mp
 import numpy as np
 
-from interactive_scenario import call_exaone_contextual_response, EXAONE_HRI_SYSTEM_PROMPT, speak_tts
-from mediapipe_emotion import create_face_landmarker, emotion_scores_from_result
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from utils.hri_response import EXAONE_HRI_SYSTEM_PROMPT, call_exaone_contextual_response
+from utils.mediapipe_bridge import create_face_landmarker, emotion_scores_from_result
+from utils.tts import speak_tts
 
 
 TEST_CASES = [

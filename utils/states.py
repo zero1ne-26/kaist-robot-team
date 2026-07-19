@@ -10,7 +10,7 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-from audio_manager import AudioManager
+from utils.audio_manager import AudioManager
 
 
 class PipelineState(Enum):
